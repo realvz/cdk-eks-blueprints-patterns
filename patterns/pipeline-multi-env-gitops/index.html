@@ -488,13 +488,13 @@
 
 
 
-<h1 id="pipeline-multi-environment-pattern">Pipeline Multi Environment Pattern<a class="headerlink" href="#pipeline-multi-environment-pattern" title="Permanent link">&para;</a></h1>
-<h2 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h2>
+<h1 id="pipeline-multi-environment-pattern">Pipeline Multi Environment Pattern<a class="headerlink" href="#pipeline-multi-environment-pattern" title="Permanent link">¤</a></h1>
+<h2 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">¤</a></h2>
 <ol>
 <li>Deploying an EKS cluster across 3 environments( dev, test, and prod ), with a Continuous Deployment pipeline triggered upon a commit to the repository that holds the pipeline configuration.</li>
 <li>Configuring GitOps tooling (ArgoCD addon) to support multi-team and multi-repositories configuration, in a way that restricts each application to be deployed only into the team namespace, by using ArgoCD projects</li>
 </ol>
-<h3 id="gitops-confguration">GitOps confguration<a class="headerlink" href="#gitops-confguration" title="Permanent link">&para;</a></h3>
+<h3 id="gitops-confguration">GitOps confguration<a class="headerlink" href="#gitops-confguration" title="Permanent link">¤</a></h3>
 <p>For GitOps, the blueprint bootstrap the ArgoCD addon and points to the <a href="https://github.com/aws-samples/eks-blueprints-workloads">EKS Blueprints Workload</a> sample repository.
 The pattern uses the ECSDEMO applications as sample applications to demonstrate how to setup a GitOps configuration with multiple teams and multiple applications. The pattern include the following configurations in terms io:</p>
 <ol>
@@ -503,7 +503,7 @@ The pattern uses the ECSDEMO applications as sample applications to demonstrate 
 <li>ArgoCD projects - as part of the ArgoCD addon bootstrap, the pattern generate an ArgoCD project for each application team. The ArgoCD are used in order to restrict the deployment of an application to a specific target namespace</li>
 </ol>
 <p>You can find the App of Apps configuration for this pattern in the workload repository under the folder <a href="https://github.com/aws-samples/eks-blueprints-workloads/tree/main/multi-repo"><code>multi-repo</code></a>.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¤</a></h2>
 <ol>
 <li>Fork this repository to your GitHub organisation/user</li>
 <li>Clone your forked repository</li>
@@ -559,12 +559,12 @@ aws iam create-user --user-name platform-user
 </ol>
 </li>
 </ol>
-<h2 id="deploying">Deploying<a class="headerlink" href="#deploying" title="Permanent link">&para;</a></h2>
+<h2 id="deploying">Deploying<a class="headerlink" href="#deploying" title="Permanent link">¤</a></h2>
 <p>Once all pre-requisites are set you are ready to deploy the pipeline. Run the following command from the root of this repository to deploy the pipeline stack:</p>
 <div class="highlight"><pre><span></span><code>npx cdk deploy eks-blueprint-pipeline-stack
 </code></pre></div>
 <p>Now you can go to <a href="https://eu-west-1.console.aws.amazon.com/codesuite/codepipeline/pipelines">AWS CodePipeline console</a>, and see how it was automatically created to deploy multiple Amazon EKS clusters to different environments.</p>
-<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">&para;</a></h3>
+<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">¤</a></h3>
 <ol>
 <li>
 <p>In case your pipeline fails on the first run, it's because that the AWS CodeBuild step needs elevated permissions at build time. This is described in the official <a href="https://aws-quickstart.github.io/cdk-eks-blueprints/pipelines/#troubleshooting">docs</a>. To reolve this, locate <code>AccessDeniedException</code> in the CodeBuild build logs, and attach the following inline policy to it:</p>

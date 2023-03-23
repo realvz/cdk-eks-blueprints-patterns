@@ -450,13 +450,13 @@
 
 
 
-<h1 id="nginx-pattern">NGINX Pattern<a class="headerlink" href="#nginx-pattern" title="Permanent link">&para;</a></h1>
-<h2 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h2>
+<h1 id="nginx-pattern">NGINX Pattern<a class="headerlink" href="#nginx-pattern" title="Permanent link">¤</a></h1>
+<h2 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">¤</a></h2>
 <p>When setting up a target platform across multiple dimensions that question of ingress must be solved. Ideally, it should work in such as way that workloads provisioned on the target environments could be accessible via internet exposing sub-domains of some predefined global domain name. </p>
 <p>Communication with the workloads should leverage secure TLS protected Load balancer with proper public (or private) certificate.</p>
 <p>A single cluster will deploy workloads from multiple teams and each of them should be able to expose workloads routed to their corresponding namespace. So, teams are expected to define ingress objects. </p>
 <p>In addition, this approach should work not only for a single cluster, but also across multiple regions and environments. </p>
-<h2 id="approach">Approach<a class="headerlink" href="#approach" title="Permanent link">&para;</a></h2>
+<h2 id="approach">Approach<a class="headerlink" href="#approach" title="Permanent link">¤</a></h2>
 <p>Since we will be defining subdomains for a global enterprise domain across multiple environments, which are as a rule placed in separate AWS accounts, root domain should defined in a separate account. Let's call it global DNS account. </p>
 <p>Sub-domains are then defined in the target accounts (let's call them workload accounts).</p>
 <p>Our blueprint will then include the following:</p>
@@ -467,7 +467,7 @@
 <li>Team onboarding that leverage the ingress capabilities through ArgoCD. </li>
 <li>Other popular add-ons.</li>
 </ol>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¤</a></h2>
 <ol>
 <li><code>argo-admin-password</code> secret must be defined as plain text (not key/value) in <code>us-west-2</code>  region.</li>
 <li>The parent domain must be defined in a separate account (GLOBAL_DNS_ACCOUNT).</li>
@@ -498,7 +498,7 @@
 }
 </code></pre></div></li>
 </ol>
-<h2 id="deploying">Deploying<a class="headerlink" href="#deploying" title="Permanent link">&para;</a></h2>
+<h2 id="deploying">Deploying<a class="headerlink" href="#deploying" title="Permanent link">¤</a></h2>
 <p>Once all pre-requisites are set you should be able to get a working cluster with all the objectives met, including workloads with an example of team-specific ingress objects. </p>
 
               

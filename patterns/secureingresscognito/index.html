@@ -506,14 +506,14 @@
 
 
 
-<h1 id="secure-ingress-using-cognito-pattern">Secure Ingress using Cognito Pattern<a class="headerlink" href="#secure-ingress-using-cognito-pattern" title="Permanent link">&para;</a></h1>
-<h2 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">&para;</a></h2>
+<h1 id="secure-ingress-using-cognito-pattern">Secure Ingress using Cognito Pattern<a class="headerlink" href="#secure-ingress-using-cognito-pattern" title="Permanent link">¤</a></h1>
+<h2 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">¤</a></h2>
 <p>The objective of this pattern is to provide a secure authentication mechanism for customer applications using Amazon Cognito, ALB, and Route53, ensuring that only authorized users can access the application. The Kubecost tool is used as a reference or sample implementation to demonstrate the pattern's capabilities.</p>
 <p>To achieve this objective, the pattern utilizes Amazon Cognito to provide user authentication for the application's ingress, with ALB's built-in support for user authentication handling routine tasks such as user sign-up, sign-in, and sign-out. In addition to Amazon Cognito, ALB integrates with any OpenID Connect compliant identity provider (IdP) for a single sign-on experience across applications. ACM and Route53 provide SSL/TLS certificates to secure connections to ALB and authenticate users, preventing sensitive information from being intercepted or tampered with during transmission.</p>
 <p>The pattern also leverages Kubecost to provide real-time cost visibility and analysis for Kubernetes clusters, enabling customers to make informed decisions about resource allocation and utilization. This pattern can be easily adapted and extended to secure ingress for any application, providing a unified and secure solution for user authentication while optimizing costs. By implementing this solution, Amazon EKS customers can have a reliable, scalable, and secure authentication mechanism for their applications, with a cost optimization tool to manage and reduce the costs associated with their Kubernetes clusters.</p>
-<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">&para;</a></h2>
+<h2 id="architecture">Architecture<a class="headerlink" href="#architecture" title="Permanent link">¤</a></h2>
 <p><img alt="Kubecost Architecture" src="../images/secure-ingress-kubecost.png" /></p>
-<h2 id="approach">Approach<a class="headerlink" href="#approach" title="Permanent link">&para;</a></h2>
+<h2 id="approach">Approach<a class="headerlink" href="#approach" title="Permanent link">¤</a></h2>
 <p>This blueprint will include the following:</p>
 <ul>
 <li>A new Well-Architected VPC with both Public and Private subnets.</li>
@@ -526,13 +526,13 @@
 <li><a href="https://aws-quickstart.github.io/cdk-eks-blueprints/addons/argo-cd/">Argo CD</a> is a declarative, GitOps continuous delivery tool for Kubernetes. The Argo CD add-on provisions Argo CD into an EKS cluster, and bootstraping your workloads from public and private Git repositories.</li>
 <li>Create the necessary Cognito resources like user pool, user pool client, domain etc.., and passed to the Argo CD app of apps pattern from which ingress resources can reference.</li>
 </ul>
-<h2 id="gitops-confguration">GitOps confguration<a class="headerlink" href="#gitops-confguration" title="Permanent link">&para;</a></h2>
+<h2 id="gitops-confguration">GitOps confguration<a class="headerlink" href="#gitops-confguration" title="Permanent link">¤</a></h2>
 <p>For GitOps, the blueprint bootstrap the ArgoCD addon and points to the <a href="https://github.com/aws-samples/eks-blueprints-workloads">EKS Blueprints Workload</a> sample repository.</p>
-<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">&para;</a></h2>
+<h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¤</a></h2>
 <ol>
 <li>The parent domain must exist.</li>
 </ol>
-<h2 id="deploying">Deploying<a class="headerlink" href="#deploying" title="Permanent link">&para;</a></h2>
+<h2 id="deploying">Deploying<a class="headerlink" href="#deploying" title="Permanent link">¤</a></h2>
 <ol>
 <li>argo-admin-password secret must be defined as plain text (not key/value) in <code>us-west-2</code>  region.</li>
 </ol>
@@ -554,7 +554,7 @@
 <div class="highlight"><pre><span></span><code>make build
 npx cdk deploy secure-ingress-blueprint
 </code></pre></div>
-<h2 id="cluster-access">Cluster Access<a class="headerlink" href="#cluster-access" title="Permanent link">&para;</a></h2>
+<h2 id="cluster-access">Cluster Access<a class="headerlink" href="#cluster-access" title="Permanent link">¤</a></h2>
 <p>Once the deploy completes, you will see output in your terminal window similar to the following:</p>
 <p><div class="highlight"><pre><span></span><code>Outputs:
 secure-ingress-blueprint.secureingressblueprintClusterNameD6A1BE5C = secure-ingress-blueprint
@@ -571,7 +571,7 @@ arn:aws:cloudformation:us-west-2:&lt;ACCOUNT ID&gt;:stack/secure-ingress-bluepri
 <div class="highlight"><pre><span></span><code>kubectl get all -n kubecost
 </code></pre></div>
 <p>You should see output that lists all namespaces in your cluster.</p>
-<h2 id="test-authentication">Test authentication<a class="headerlink" href="#test-authentication" title="Permanent link">&para;</a></h2>
+<h2 id="test-authentication">Test authentication<a class="headerlink" href="#test-authentication" title="Permanent link">¤</a></h2>
 <p>Point your browser to the URL of the Kubecost app in your cluster. You can get the URL from the cdk.json file using the below command.</p>
 <div class="highlight"><pre><span></span><code>awk -F&#39;:&#39; &#39;/dev.subzone.name/ {print $2}&#39; cdk.json | tr -d &#39;&quot;,&#39; | xargs echo
 </code></pre></div>

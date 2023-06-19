@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../jupyterhub/">
+        <link rel="prev" href="../custom-networking-with-ipv4/">
       
       
-        <link rel="next" href="../multi-account-monitoring/">
+        <link rel="next" href="../jupyterhub/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
-        <title>Kubeflow Pattern - Amazon EKS Blueprints Patterns</title>
+        <title>Instana Pattern - Amazon EKS Blueprints Patterns</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kubeflow-on-eks" class="md-skip">
+        <a href="#ibm-instana-on-eks-pattern" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Kubeflow Pattern
+              Instana Pattern
             
           </span>
         </div>
@@ -282,34 +282,6 @@
               
   
   
-  
-    <li class="md-nav__item">
-      <a href="../instana/" class="md-nav__link">
-        Instana Pattern
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../jupyterhub/" class="md-nav__link">
-        Jupyterhub Pattern
-      </a>
-    </li>
-  
-
-            
-          
-            
-              
-  
-  
     
   
   
@@ -322,12 +294,12 @@
       
       
         <label class="md-nav__link md-nav__link--active" for="__toc">
-          Kubeflow Pattern
+          Instana Pattern
           <span class="md-nav__icon md-icon"></span>
         </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        Kubeflow Pattern
+        Instana Pattern
       </a>
       
         
@@ -353,6 +325,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#project-setup" class="md-nav__link">
+    Project Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instana-agent-configuration" class="md-nav__link">
+    Instana Agent Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-configure-additional-configuration-parameters" class="md-nav__link">
+    Optional: Configure additional configuration parameters.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#deploy-eks-cluster-with-amazon-eks-blueprints-for-cdk" class="md-nav__link">
     Deploy EKS Cluster with Amazon EKS Blueprints for CDK
   </a>
@@ -362,13 +355,6 @@
         <li class="md-nav__item">
   <a href="#verify-the-resources" class="md-nav__link">
     Verify the resources
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execute-machine-learning-jobs-on-kubeflow" class="md-nav__link">
-    Execute Machine learning jobs on Kubeflow
   </a>
   
 </li>
@@ -391,6 +377,34 @@
   
 </nav>
       
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../jupyterhub/" class="md-nav__link">
+        Jupyterhub Pattern
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../kubeflow/" class="md-nav__link">
+        Kubeflow Pattern
+      </a>
     </li>
   
 
@@ -596,6 +610,27 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#project-setup" class="md-nav__link">
+    Project Setup
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#instana-agent-configuration" class="md-nav__link">
+    Instana Agent Configuration
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#optional-configure-additional-configuration-parameters" class="md-nav__link">
+    Optional: Configure additional configuration parameters.
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#deploy-eks-cluster-with-amazon-eks-blueprints-for-cdk" class="md-nav__link">
     Deploy EKS Cluster with Amazon EKS Blueprints for CDK
   </a>
@@ -605,13 +640,6 @@
         <li class="md-nav__item">
   <a href="#verify-the-resources" class="md-nav__link">
     Verify the resources
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execute-machine-learning-jobs-on-kubeflow" class="md-nav__link">
-    Execute Machine learning jobs on Kubeflow
   </a>
   
 </li>
@@ -648,15 +676,13 @@
   
 
 
-<h1 id="kubeflow-on-eks">Kubeflow on EKS<a class="headerlink" href="#kubeflow-on-eks" title="Permanent link">¤</a></h1>
-<p>The Kubeflow project is dedicated to making deployments of machine learning (ML) workflows on Kubernetes simple, portable and scalable.
-Our goal is not to recreate other services, but to provide a straightforward way to deploy best-of-breed open-source systems for ML to diverse infrastructures.
-Anywhere you are running Kubernetes, you should be able to run Kubeflow.</p>
+<h1 id="ibm-instana-on-eks-pattern">IBM Instana on EKS pattern<a class="headerlink" href="#ibm-instana-on-eks-pattern" title="Permanent link">¤</a></h1>
+<p>The IBM Instana Addon for Amazon EKS Blueprint is designed to enhance observability, monitoring, and management capabilities for applications running on Amazon Elastic Kubernetes Service (EKS). Instana Addon focuses on enhancing the user experience by reducing the complexity and time required to install and configure an Instana host agent on Amazon EKS cluster.</p>
+<p>This Addon will use IBM Instana Kubernetes operator in the namespace <code>instana-agent</code> to install and manage the Instana agent. It also configures custom resource values to configure the operator.</p>
 <p>This pattern deploys the following resources:</p>
 <ul>
 <li>Creates EKS Cluster Control plane with public endpoint (for demo purpose only) with a managed node group</li>
-<li>Deploys supporting add-ons: ClusterAutoScaler, AwsLoadBalancerController, VpcCni, CoreDns, KubeProxy, EbsCsiDriver, CertManagerAddOn, KubeStateMetricsAddOn, PrometheusNodeExporterAddOn, AdotCollectorAddOn, AmpAddOn,</li>
-<li>Deploy Kubeflow on the EKS cluster</li>
+<li>Install and set up the Instana Host Agent for monitoring your EKS workloads. (by using the provided environment variable and additional configuration parameters)</li>
 </ul>
 <h2 id="prerequisites">Prerequisites:<a class="headerlink" href="#prerequisites" title="Permanent link">¤</a></h2>
 <p>Ensure that you have installed the following tools on your machine.</p>
@@ -665,45 +691,112 @@ Anywhere you are running Kubernetes, you should be able to run Kubeflow.</p>
 <li><a href="https://Kubernetes.io/docs/tasks/tools/">kubectl</a></li>
 <li><a href="https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html#getting_started_install">cdk</a></li>
 <li><a href="https://docs.npmjs.com/cli/v8/commands/npm-install">npm</a></li>
+<li>Instana backend application - Use SaaS (eg <a href="https://aws.amazon.com/marketplace/pp/prodview-hnqy5e3t3fzda?sr=0-1&amp;ref_=beagle&amp;applicationId=AWSMPContessa">aws</a>) or Install self-hosted Instana backend (<a href="https://www.ibm.com/docs/en/instana-observability/current?topic=installing-configuring-self-hosted-instana-backend-premises">on-premises</a>)</li>
 </ol>
-<h2 id="deploy-eks-cluster-with-amazon-eks-blueprints-for-cdk">Deploy EKS Cluster with Amazon EKS Blueprints for CDK<a class="headerlink" href="#deploy-eks-cluster-with-amazon-eks-blueprints-for-cdk" title="Permanent link">¤</a></h2>
+<h2 id="project-setup">Project Setup<a class="headerlink" href="#project-setup" title="Permanent link">¤</a></h2>
 <p>Clone the repository</p>
 <div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/aws-samples/cdk-eks-blueprints-patterns.git
 </code></pre></div>
-<p>Updating npm</p>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>npm@latest
+<p>Go inside project directory (eg. cdk-eks-blueprints-patterns)</p>
+<div class="highlight"><pre><span></span><code><span class="nb">cd</span><span class="w"> </span>cdk-eks-blueprints-patterns
 </code></pre></div>
-<p>To view patterns and deploy kubeflow pattern</p>
+<p>Install project dependencies.</p>
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>deps
+</code></pre></div>
+<h2 id="instana-agent-configuration">Instana Agent Configuration<a class="headerlink" href="#instana-agent-configuration" title="Permanent link">¤</a></h2>
+<p>Go to your Instana Backend application (Instana User Interface), click ... More &gt; Agents &gt; Installing Instana Agents and select 'Kubernetes' platform to get the Instana Agent Key, Instana Service Endpoint, Instana Service port. These steps are also described <a href="https://www.ibm.com/docs/en/instana-observability/218?topic=instana-endpoints-keys">here</a> or in the screenshot below.</p>
+<p><a href="../images/instana-agent.png">Instana Agent Configuration</a></p>
+<p>To set the following environment variables from the CLI, use the corresponding values obtained from the Instana Service Endpoint and Port (as shown in the above screenshot), and the Instana Application Key (also shown in the above screenshot):</p>
+<ul>
+<li>Set the value of <strong>INSTANA_ENDPOINT_HOST_URL</strong> to the Instana Service Endpoint.</li>
+<li>Set the value of <strong>INSTANA_ENDPOINT_HOST_PORT</strong> to the Instana Service Port.</li>
+<li>Set the value of <strong>INSTANA_AGENT_KEY</strong> to the Instana Application Key.</li>
+</ul>
+<p>You can choose the names for <strong>AMAZON_EKS_CLUSTER_NAME</strong> and <strong>INSTANA_ZONE_NAME</strong> based on your cluster's name, for example, "eks-blueprint".</p>
+<p>Set the value of the following environment variable and run it on CLI to set those variables.</p>
+<div class="highlight"><pre><span></span><code>export INSTANA_ZONE_NAME=
+export AMAZON_EKS_CLUSTER_NAME=
+export INSTANA_AGENT_KEY=
+export INSTANA_ENDPOINT_HOST_URL=
+export INSTANA_ENDPOINT_HOST_PORT=
+</code></pre></div>
+<p>For example:</p>
+<div class="highlight"><pre><span></span><code>export INSTANA_ZONE_NAME=eks-blueprint
+export AMAZON_EKS_CLUSTER_NAME=eks-blueprint
+export INSTANA_AGENT_KEY=abc123
+export INSTANA_ENDPOINT_HOST_URL=instana.example.com
+export INSTANA_ENDPOINT_HOST_PORT=&quot;443&quot;
+</code></pre></div>
+<h2 id="optional-configure-additional-configuration-parameters">Optional: Configure additional configuration parameters.<a class="headerlink" href="#optional-configure-additional-configuration-parameters" title="Permanent link">¤</a></h2>
+<p>To configure additional parameters for the Instana agent according to your specific use case, follow these steps:</p>
+<ul>
+<li>Go to project/lib/instana-construct/index.ts</li>
+<li>Add the additional configuration parameters under <code>const instanaProps</code> variable.</li>
+</ul>
+<p>For an example:</p>
+<div class="highlight"><pre><span></span><code><span class="k">export</span><span class="w"> </span><span class="kd">const</span><span class="w"> </span><span class="nx">instanaProps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
+<span class="w"> </span><span class="nx">zone</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.INSTANA_ZONE_NAME</span><span class="p">,</span><span class="w"> </span><span class="c1">// Mandatory Parameter</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">cluster</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">name</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.AMAZON_EKS_CLUSTER_NAME</span><span class="p">,</span><span class="w"> </span><span class="c1">// Mandatory Parameter</span>
+<span class="w">  </span><span class="p">},</span>
+<span class="w">  </span><span class="nx">agent</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">key</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.INSTANA_AGENT_KEY</span><span class="p">,</span><span class="c1">// Mandatory Parameter</span>
+<span class="w">    </span><span class="nx">endpointHost</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.INSTANA_ENDPOINT_HOST_URL</span><span class="p">,</span><span class="c1">//Mandatory Parameter</span>
+<span class="w">    </span><span class="nx">endpointPort</span><span class="o">:</span><span class="w"> </span><span class="kt">process.env.INSTANA_ENDPOINT_HOST_PORT</span><span class="p">,</span><span class="w"> </span><span class="c1">// Mandatory Parameter,</span>
+<span class="w">    </span><span class="nx">env</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">INSTANA_AGENT_TAGS</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;staging&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="nx">configuration_yaml</span><span class="o">:</span><span class="sb">`</span>
+<span class="sb">    com.instana.plugin.host:</span>
+<span class="sb">        tags:</span>
+<span class="sb">            - &#39;dev&#39;</span>
+<span class="sb">            - &#39;app1&#39;</span>
+<span class="sb">        com.instana.plugin.javatrace:</span>
+<span class="sb">            instrumentation:</span>
+<span class="sb">                enabled: true</span>
+<span class="sb">                opentracing: true</span>
+<span class="sb">                sdk:</span>
+<span class="sb">                    packages:</span>
+<span class="sb">                        - &#39;com.instana.backend&#39;</span>
+<span class="sb">                        - &#39;com.instana.frontend&#39;</span>
+<span class="sb">    `</span>
+<span class="w">  </span><span class="p">}</span>
+<span class="p">};</span>
+</code></pre></div>
+<h2 id="deploy-eks-cluster-with-amazon-eks-blueprints-for-cdk">Deploy EKS Cluster with Amazon EKS Blueprints for CDK<a class="headerlink" href="#deploy-eks-cluster-with-amazon-eks-blueprints-for-cdk" title="Permanent link">¤</a></h2>
+<p>To view patterns and deploy <code>instana-operator</code> pattern</p>
 <div class="highlight"><pre><span></span><code>make<span class="w"> </span>list
 cdk<span class="w"> </span>bootstrap
-make<span class="w"> </span>pattern<span class="w"> </span>kubeflow<span class="w"> </span>deploy
+make<span class="w"> </span>pattern<span class="w"> </span>instana-operator<span class="w"> </span>deploy
 </code></pre></div>
 <h2 id="verify-the-resources">Verify the resources<a class="headerlink" href="#verify-the-resources" title="Permanent link">¤</a></h2>
 <p>Run update-kubeconfig command. You should be able to get the command from CDK output message. More information can be found at <a href="https://aws-quickstart.github.io/cdk-eks-blueprints/getting-started/#cluster-access">https://aws-quickstart.github.io/cdk-eks-blueprints/getting-started/#cluster-access</a>
-<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>eks<span class="w"> </span>update-kubeconfig<span class="w"> </span>--name<span class="w"> </span>&lt;your<span class="w"> </span>cluster<span class="w"> </span>name&gt;<span class="w"> </span>--region<span class="w"> </span>&lt;your<span class="w"> </span>region&gt;<span class="w"> </span>--role-arn<span class="w"> </span>arn:aws:iam::xxxxxxxxx:role/kubeflow-blueprint-kubeflowblueprintMastersRole0C1-saJBO
+<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>eks<span class="w"> </span>update-kubeconfig<span class="w"> </span>--name<span class="w"> </span>&lt;your<span class="w"> </span>cluster<span class="w"> </span>name&gt;<span class="w"> </span>--region<span class="w"> </span>&lt;your<span class="w"> </span>region&gt;<span class="w"> </span>--role-arn<span class="w"> </span>arn:aws:iam::xxxxxxxxx:role/eks-blue1-eksblue1AccessRole32C5DF05-1NBFCH8INI08A
 </code></pre></div></p>
-<p>Let’s verify the resources created by Steps above.
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span><span class="c1"># Output shows the EKS Managed Node group nodes</span>
-
-kubectl<span class="w"> </span>get<span class="w"> </span>ns<span class="w"> </span><span class="p">|</span><span class="w"> </span>kubeflow<span class="w"> </span><span class="c1"># Output shows kubeflow namespace</span>
-
-kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>--namespace<span class="o">=</span>kubeflow-pipelines<span class="w">  </span><span class="c1"># Output shows kubeflow pods</span>
-</code></pre></div></p>
-<h2 id="execute-machine-learning-jobs-on-kubeflow">Execute Machine learning jobs on Kubeflow<a class="headerlink" href="#execute-machine-learning-jobs-on-kubeflow" title="Permanent link">¤</a></h2>
-<p>log into Kubeflow pipeline UI by creating a port-forward to the ml-pipeline-ui service<br></p>
-<p><div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>port-forward<span class="w"> </span>svc/ml-pipeline-ui<span class="w"> </span><span class="m">9000</span>:80<span class="w"> </span>-n<span class="w"> </span><span class="o">=</span>kubeflow-pipelines
+<p>Lets verify the resources created by Steps above.
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>-n<span class="w"> </span>instana-agent<span class="w"> </span><span class="c1"># Output shows the EKS Managed Node group nodes under instana-agent namespace</span>
 </code></pre></div>
-and open this browser: <a href="http://localhost:9000/#/pipelines">http://localhost:9000/#/pipelines</a>
-more pipeline examples can be found at <a href="https://www.kubeflow.org/docs/components/pipelines/tutorials/">https://www.kubeflow.org/docs/components/pipelines/tutorials/</a></p>
+Output of the above command will be silimar to below one:</p>
+<p><div class="highlight"><pre><span></span><code><span class="go">NAMESPACE       NAME                                                READY       STATUS    RESTARTS   AGE</span>
+<span class="go">instana-agent   controller-manager-78479cb596-sktg9     1/1         Running                     0          56m</span>
+<span class="go">instana-agent   controller-manager-78479cb596-xz8kn     1/1         Running                     0          56m</span>
+<span class="go">instana-agent   instana-agent-gsqx8                                 1/1         Running                     0          56m</span>
+</code></pre></div>
+Run following command to verify Instana Agent logs
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>logs<span class="w"> </span>&lt;instana-agent-pod-name&gt;<span class="w"> </span>-n<span class="w"> </span>instana-agent<span class="w"> </span><span class="c1"># Output shows instana agent logs. pod name in this example is instana-agent-gsqx8</span>
+</code></pre></div></p>
 <h2 id="cleanup">Cleanup<a class="headerlink" href="#cleanup" title="Permanent link">¤</a></h2>
 <p>To clean up your EKS Blueprints, run the following commands:</p>
-<div class="highlight"><pre><span></span><code>cdk<span class="w"> </span>destroy<span class="w"> </span>kubeflow-blueprint<span class="w"> </span>
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>pattern<span class="w"> </span>instana-operator<span class="w"> </span>destroy<span class="w"> </span>
 </code></pre></div>
 <h2 id="disclaimer">Disclaimer<a class="headerlink" href="#disclaimer" title="Permanent link">¤</a></h2>
 <p>This pattern relies on an open source NPM package eks-blueprints-cdk-kubeflow-ext. Please refer to the package npm site for more information.
-<a href="https://www.npmjs.com/package/eks-blueprints-cdk-kubeflow-ext">https://www.npmjs.com/package/eks-blueprints-cdk-kubeflow-ext</a></p>
-<p>If you have any questions about the npm package or find any defect, please post in the source repo at 
-<a href="https://github.com/season1946/eks-blueprints-cdk-kubeflow-extension">https://github.com/season1946/eks-blueprints-cdk-kubeflow-extension</a></p>
+<div class="highlight"><pre><span></span><code>https://www.npmjs.com/package/@instana/aws-eks-blueprint-addon&#39;
+</code></pre></div>
+If you have any questions about the npm package or find any defect, please post in the source repo at:
+<a href="https://github.com/instana/instana-eks-blueprint-addon/issues">https://github.com/instana/instana-eks-blueprint-addon/issues</a></p>
 
 
 

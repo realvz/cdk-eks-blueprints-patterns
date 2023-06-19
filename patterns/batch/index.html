@@ -9,17 +9,17 @@
       
       
       
-        <link rel="prev" href="../jupyterhub/">
+        <link rel="prev" href="../..">
       
       
-        <link rel="next" href="../multi-account-monitoring/">
+        <link rel="next" href="../custom-networking-with-ipv4/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
-        <title>Kubeflow Pattern - Amazon EKS Blueprints Patterns</title>
+        <title>AWS Batch Pattern - Amazon EKS Blueprints Patterns</title>
       
     
     
@@ -67,7 +67,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#kubeflow-on-eks" class="md-skip">
+        <a href="#aws-batch-on-amazon-eks-pattern" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Kubeflow Pattern
+              AWS Batch Pattern
             
           </span>
         </div>
@@ -254,11 +254,52 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../batch/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          AWS Batch Pattern
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         AWS Batch Pattern
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#objective" class="md-nav__link">
+    Objective
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -310,87 +351,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Kubeflow Pattern
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../kubeflow/" class="md-nav__link">
         Kubeflow Pattern
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploy-eks-cluster-with-amazon-eks-blueprints-for-cdk" class="md-nav__link">
-    Deploy EKS Cluster with Amazon EKS Blueprints for CDK
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-the-resources" class="md-nav__link">
-    Verify the resources
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execute-machine-learning-jobs-on-kubeflow" class="md-nav__link">
-    Execute Machine learning jobs on Kubeflow
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cleanup" class="md-nav__link">
-    Cleanup
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#disclaimer" class="md-nav__link">
-    Disclaimer
-  </a>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -589,43 +554,8 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites:
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploy-eks-cluster-with-amazon-eks-blueprints-for-cdk" class="md-nav__link">
-    Deploy EKS Cluster with Amazon EKS Blueprints for CDK
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#verify-the-resources" class="md-nav__link">
-    Verify the resources
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#execute-machine-learning-jobs-on-kubeflow" class="md-nav__link">
-    Execute Machine learning jobs on Kubeflow
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#cleanup" class="md-nav__link">
-    Cleanup
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#disclaimer" class="md-nav__link">
-    Disclaimer
+  <a href="#objective" class="md-nav__link">
+    Objective
   </a>
   
 </li>
@@ -648,62 +578,13 @@
   
 
 
-<h1 id="kubeflow-on-eks">Kubeflow on EKS<a class="headerlink" href="#kubeflow-on-eks" title="Permanent link">¤</a></h1>
-<p>The Kubeflow project is dedicated to making deployments of machine learning (ML) workflows on Kubernetes simple, portable and scalable.
-Our goal is not to recreate other services, but to provide a straightforward way to deploy best-of-breed open-source systems for ML to diverse infrastructures.
-Anywhere you are running Kubernetes, you should be able to run Kubeflow.</p>
-<p>This pattern deploys the following resources:</p>
-<ul>
-<li>Creates EKS Cluster Control plane with public endpoint (for demo purpose only) with a managed node group</li>
-<li>Deploys supporting add-ons: ClusterAutoScaler, AwsLoadBalancerController, VpcCni, CoreDns, KubeProxy, EbsCsiDriver, CertManagerAddOn, KubeStateMetricsAddOn, PrometheusNodeExporterAddOn, AdotCollectorAddOn, AmpAddOn,</li>
-<li>Deploy Kubeflow on the EKS cluster</li>
-</ul>
-<h2 id="prerequisites">Prerequisites:<a class="headerlink" href="#prerequisites" title="Permanent link">¤</a></h2>
-<p>Ensure that you have installed the following tools on your machine.</p>
-<ol>
-<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html">aws cli</a></li>
-<li><a href="https://Kubernetes.io/docs/tasks/tools/">kubectl</a></li>
-<li><a href="https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html#getting_started_install">cdk</a></li>
-<li><a href="https://docs.npmjs.com/cli/v8/commands/npm-install">npm</a></li>
-</ol>
-<h2 id="deploy-eks-cluster-with-amazon-eks-blueprints-for-cdk">Deploy EKS Cluster with Amazon EKS Blueprints for CDK<a class="headerlink" href="#deploy-eks-cluster-with-amazon-eks-blueprints-for-cdk" title="Permanent link">¤</a></h2>
-<p>Clone the repository</p>
-<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/aws-samples/cdk-eks-blueprints-patterns.git
-</code></pre></div>
-<p>Updating npm</p>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>npm@latest
-</code></pre></div>
-<p>To view patterns and deploy kubeflow pattern</p>
-<div class="highlight"><pre><span></span><code>make<span class="w"> </span>list
-cdk<span class="w"> </span>bootstrap
-make<span class="w"> </span>pattern<span class="w"> </span>kubeflow<span class="w"> </span>deploy
-</code></pre></div>
-<h2 id="verify-the-resources">Verify the resources<a class="headerlink" href="#verify-the-resources" title="Permanent link">¤</a></h2>
-<p>Run update-kubeconfig command. You should be able to get the command from CDK output message. More information can be found at <a href="https://aws-quickstart.github.io/cdk-eks-blueprints/getting-started/#cluster-access">https://aws-quickstart.github.io/cdk-eks-blueprints/getting-started/#cluster-access</a>
-<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>eks<span class="w"> </span>update-kubeconfig<span class="w"> </span>--name<span class="w"> </span>&lt;your<span class="w"> </span>cluster<span class="w"> </span>name&gt;<span class="w"> </span>--region<span class="w"> </span>&lt;your<span class="w"> </span>region&gt;<span class="w"> </span>--role-arn<span class="w"> </span>arn:aws:iam::xxxxxxxxx:role/kubeflow-blueprint-kubeflowblueprintMastersRole0C1-saJBO
-</code></pre></div></p>
-<p>Let’s verify the resources created by Steps above.
-<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span><span class="c1"># Output shows the EKS Managed Node group nodes</span>
-
-kubectl<span class="w"> </span>get<span class="w"> </span>ns<span class="w"> </span><span class="p">|</span><span class="w"> </span>kubeflow<span class="w"> </span><span class="c1"># Output shows kubeflow namespace</span>
-
-kubectl<span class="w"> </span>get<span class="w"> </span>pods<span class="w"> </span>--namespace<span class="o">=</span>kubeflow-pipelines<span class="w">  </span><span class="c1"># Output shows kubeflow pods</span>
-</code></pre></div></p>
-<h2 id="execute-machine-learning-jobs-on-kubeflow">Execute Machine learning jobs on Kubeflow<a class="headerlink" href="#execute-machine-learning-jobs-on-kubeflow" title="Permanent link">¤</a></h2>
-<p>log into Kubeflow pipeline UI by creating a port-forward to the ml-pipeline-ui service<br></p>
-<p><div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>port-forward<span class="w"> </span>svc/ml-pipeline-ui<span class="w"> </span><span class="m">9000</span>:80<span class="w"> </span>-n<span class="w"> </span><span class="o">=</span>kubeflow-pipelines
-</code></pre></div>
-and open this browser: <a href="http://localhost:9000/#/pipelines">http://localhost:9000/#/pipelines</a>
-more pipeline examples can be found at <a href="https://www.kubeflow.org/docs/components/pipelines/tutorials/">https://www.kubeflow.org/docs/components/pipelines/tutorials/</a></p>
-<h2 id="cleanup">Cleanup<a class="headerlink" href="#cleanup" title="Permanent link">¤</a></h2>
-<p>To clean up your EKS Blueprints, run the following commands:</p>
-<div class="highlight"><pre><span></span><code>cdk<span class="w"> </span>destroy<span class="w"> </span>kubeflow-blueprint<span class="w"> </span>
-</code></pre></div>
-<h2 id="disclaimer">Disclaimer<a class="headerlink" href="#disclaimer" title="Permanent link">¤</a></h2>
-<p>This pattern relies on an open source NPM package eks-blueprints-cdk-kubeflow-ext. Please refer to the package npm site for more information.
-<a href="https://www.npmjs.com/package/eks-blueprints-cdk-kubeflow-ext">https://www.npmjs.com/package/eks-blueprints-cdk-kubeflow-ext</a></p>
-<p>If you have any questions about the npm package or find any defect, please post in the source repo at 
-<a href="https://github.com/season1946/eks-blueprints-cdk-kubeflow-extension">https://github.com/season1946/eks-blueprints-cdk-kubeflow-extension</a></p>
+<h1 id="aws-batch-on-amazon-eks-pattern">AWS Batch on Amazon EKS Pattern<a class="headerlink" href="#aws-batch-on-amazon-eks-pattern" title="Permanent link">¤</a></h1>
+<h2 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">¤</a></h2>
+<p>AWS Batch helps you run batch computing workloads on AWS. Using Amazon EKS as the compute resource, you can now schedule and scale batch workloads into new or existing EKS cluster. As part of the deployment, AWS Batch doesn't create, administer, or perform lifecycle operations of the EKS cluster, but will only scale up and down the nodes maanged by AWS Batch and run pods on those nodes to complete batch jobs. </p>
+<p>The objective of this pattern is to deploy AWS Batch on Amazon EKS using EKS Blueprints with the following features in place:
+- Batch addon implemented
+- Batch Team defined with a sample compute environment and job queue (as defined under <code>lib/teams/team-batch</code>) - This can be customized based on your needs
+- Fluent Bit addon implemented to monitor AWS Batch on Amazon EKS jobs using CloudWatch, with the proper permissions for sending logs</p>
 
 
 

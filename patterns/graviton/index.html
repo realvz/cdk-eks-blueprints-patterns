@@ -9,17 +9,15 @@
       
       
       
-        <link rel="prev" href="../..">
+        <link rel="prev" href="../secureingresscognito/">
       
-      
-        <link rel="next" href="../security/eks-config-rules/">
       
       <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.2, mkdocs-material-9.1.4">
     
     
       
-        <title>Multi environment Pipeline GitOps pattern Pattern - Amazon EKS Blueprints Patterns</title>
+        <title>Graviton Pattern - Amazon EKS Blueprints Patterns</title>
       
     
     
@@ -67,7 +65,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#pipeline-multi-environment-pattern" class="md-skip">
+        <a href="#graviton-on-eks" class="md-skip">
           Skip to content
         </a>
       
@@ -102,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Multi environment Pipeline GitOps pattern Pattern
+              Graviton Pattern
             
           </span>
         </div>
@@ -254,16 +252,14 @@
               
   
   
-    
-  
   
     
-    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" checked>
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
       
       
       
@@ -272,7 +268,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="true">
+      <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
         <label class="md-nav__title" for="__nav_2_1">
           <span class="md-nav__icon md-icon"></span>
           Observability Patterns
@@ -311,92 +307,11 @@
               
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
-      
-      
-        
-      
-      
-        <label class="md-nav__link md-nav__link--active" for="__toc">
-          Multi environment Pipeline GitOps pattern Pattern
-          <span class="md-nav__icon md-icon"></span>
-        </label>
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../pipeline-multi-env-gitops/" class="md-nav__link">
         Multi environment Pipeline GitOps pattern Pattern
       </a>
-      
-        
-
-<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
-  
-  
-  
-    
-  
-  
-    <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon"></span>
-      Table of contents
-    </label>
-    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
-      
-        <li class="md-nav__item">
-  <a href="#objective" class="md-nav__link">
-    Objective
-  </a>
-  
-    <nav class="md-nav" aria-label="Objective">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gitops-confguration" class="md-nav__link">
-    GitOps confguration
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#prerequisites" class="md-nav__link">
-    Prerequisites
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#deploying" class="md-nav__link">
-    Deploying
-  </a>
-  
-    <nav class="md-nav" aria-label="Deploying">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    Notes
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-    </ul>
-  
-</nav>
-      
     </li>
   
 
@@ -629,11 +544,87 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../graviton/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Graviton Pattern
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Graviton Pattern
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#why-an-m7g-instance" class="md-nav__link">
+    Why an M7g instance?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#addons" class="md-nav__link">
+    Addons
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#prerequisites" class="md-nav__link">
+    Prerequisites
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#deploy-eks-cluster-with-amazon-eks-blueprints-for-cdk" class="md-nav__link">
+    Deploy EKS Cluster with Amazon EKS Blueprints for CDK
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#verify-the-resources" class="md-nav__link">
+    Verify the resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup" class="md-nav__link">
+    Cleanup
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -672,22 +663,16 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#objective" class="md-nav__link">
-    Objective
-  </a>
-  
-    <nav class="md-nav" aria-label="Objective">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#gitops-confguration" class="md-nav__link">
-    GitOps confguration
+  <a href="#why-an-m7g-instance" class="md-nav__link">
+    Why an M7g instance?
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#addons" class="md-nav__link">
+    Addons
+  </a>
   
 </li>
       
@@ -699,22 +684,23 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#deploying" class="md-nav__link">
-    Deploying
-  </a>
-  
-    <nav class="md-nav" aria-label="Deploying">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#notes" class="md-nav__link">
-    Notes
+  <a href="#deploy-eks-cluster-with-amazon-eks-blueprints-for-cdk" class="md-nav__link">
+    Deploy EKS Cluster with Amazon EKS Blueprints for CDK
   </a>
   
 </li>
-        
-      </ul>
-    </nav>
+      
+        <li class="md-nav__item">
+  <a href="#verify-the-resources" class="md-nav__link">
+    Verify the resources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cleanup" class="md-nav__link">
+    Cleanup
+  </a>
   
 </li>
       
@@ -736,109 +722,57 @@
   
 
 
-<h1 id="pipeline-multi-environment-pattern">Pipeline Multi Environment Pattern<a class="headerlink" href="#pipeline-multi-environment-pattern" title="Permanent link">¤</a></h1>
-<h2 id="objective">Objective<a class="headerlink" href="#objective" title="Permanent link">¤</a></h2>
-<ol>
-<li>Deploying an EKS cluster across 3 environments( dev, test, and prod ), with a Continuous Deployment pipeline triggered upon a commit to the repository that holds the pipeline configuration.</li>
-<li>Configuring GitOps tooling (ArgoCD addon) to support multi-team and multi-repositories configuration, in a way that restricts each application to be deployed only into the team namespace, by using ArgoCD projects</li>
-</ol>
-<h3 id="gitops-confguration">GitOps confguration<a class="headerlink" href="#gitops-confguration" title="Permanent link">¤</a></h3>
-<p>For GitOps, the blueprint bootstrap the ArgoCD addon and points to the <a href="https://github.com/aws-samples/eks-blueprints-workloads">EKS Blueprints Workload</a> sample repository.
-The pattern uses the ECSDEMO applications as sample applications to demonstrate how to setup a GitOps configuration with multiple teams and multiple applications. The pattern include the following configurations in terms io:</p>
-<ol>
-<li>Application team - it defines 3 application teams that corresponds with the 3 sample applications used</li>
-<li>ArgoCD bootstrap - the pattern configure the ArgoCD addon to point to the <a href="https://github.com/aws-samples/eks-blueprints-workloads">workload repository</a> of the EKS Blueprints samples</li>
-<li>ArgoCD projects - as part of the ArgoCD addon bootstrap, the pattern generate an ArgoCD project for each application team. The ArgoCD are used in order to restrict the deployment of an application to a specific target namespace</li>
-</ol>
-<p>You can find the App of Apps configuration for this pattern in the workload repository under the folder <a href="https://github.com/aws-samples/eks-blueprints-workloads/tree/main/multi-repo"><code>multi-repo</code></a>.</p>
+<h1 id="graviton-on-eks">Graviton on EKS<a class="headerlink" href="#graviton-on-eks" title="Permanent link">¤</a></h1>
+<p>AWS Graviton processors are designed by AWS to deliver the best price performance for your cloud workloads running in Amazon EC2. These processors are ARM chips running on aarch64 architecture.</p>
+<p>AWS Graviton processors are supported by many Linux operating systems including Amazon Linux 2, Red Hat Enterprise Linux, SUSE, and Ubuntu. Many popular applications and services for security, monitoring and management, containers, and continuous integration and delivery (CI/CD) from AWS and software partners also support AWS Graviton-based instances.</p>
+<p>AWS Graviton processors feature key capabilities that enable you to run cloud native applications securely, and at scale. EC2 instances powered by AWS Graviton processors are built on the AWS Nitro System that features the AWS Nitro security chip with dedicated hardware and software for security functions, and support for encrypted Amazon Elastic Block Store (EBS) volumes by default.</p>
+<h3 id="why-an-m7g-instance">Why an M7g instance?<a class="headerlink" href="#why-an-m7g-instance" title="Permanent link">¤</a></h3>
+<p>There are 7 families of Graviton instances split into 5 categories.
+General Purpose: M and T families
+Compute Optimized: C family
+Memory Optimized: R and X family
+Storage Optimized: I family
+Accelerated Computing: G family</p>
+<p>For a blueprint pattern, the General Purpose and Compute Optimized categories make the most sense, since they are the most common use cases and are all Nitro-Enabled instances.  Being Nitro-Enabled means that these instances provide better networking security as well as increased performance compared to non Nitro-Enabled instances.  In these categories, there are 7 different instance types: M7g, M6g, T4g, C7g, C7gn, C6g, and C6gn.  T4g instances are specialized for burstable workloads, and both T4g and M6g instances are Graviton2 chips. M7g instances are Graviton3 chips, which offer 25% better compute performace than Graviton2 and support DDR5 memory that provides 50% more bandwith compared to DDR4. C6g and C6gn instances are also Graviton2 chips, and C7g instances are specialized for high performance computing.  For this general blueprint pattern, the M7g instance is the best option due to the high compute power, memory bandwith, networking bandwith, and broad use cases.</p>
+<p>This pattern deploys the following resources:</p>
+<ul>
+<li>Creates EKS Cluster Control plane with a managed node group running on an M family Graviton3 processor</li>
+</ul>
+<h3 id="addons">Addons<a class="headerlink" href="#addons" title="Permanent link">¤</a></h3>
+<p>Not all of the listed EKS addons support the Graviton processors. To find a list of supported addons, visit the <a href="https://github.com/aws-quickstart/cdk-eks-blueprints/blob/main/docs/addons/index.md">documentation</a>.</p>
 <h2 id="prerequisites">Prerequisites<a class="headerlink" href="#prerequisites" title="Permanent link">¤</a></h2>
+<p>Ensure that you have installed the following tools on your machine.</p>
 <ol>
-<li>Fork this repository to your GitHub organisation/user</li>
-<li>Clone your forked repository</li>
-<li>
-<p>Install the AWS CDK Toolkit globally on your machine using</p>
-<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>aws-cdk
-</code></pre></div>
-</li>
-<li>
-<p><code>github-ssh-key</code> - must contain GitHub SSH private key as a JSON structure containing fields <code>sshPrivateKey</code> and <code>url</code>. This will be used by ArgoCD addon to authenticate against ay GitHub repository (private or public). The secret is expected to be defined in the region where the pipeline will be deployed to. For more information on SSH credentials setup see <a href="https://aws-quickstart.github.io/cdk-eks-blueprints/addons/argo-cd/#secrets-support">ArgoCD Secrets Support</a>.</p>
-</li>
-<li>
-<p><code>github-token</code> secret must be stored in AWS Secrets Manager for the GitHub pipeline. For more information on how to set it up, please refer to the <a href="https://docs.aws.amazon.com/codepipeline/latest/userguide/GitHub-create-personal-token-CLI.html">docs</a>. The GitHub Personal Access Token should have these scopes:</p>
-</li>
-<li><em>repo</em> - to read the repository</li>
-<li>
-<p><em>admin:repo_hook</em> - if you plan to use webhooks (enabled by default)</p>
-</li>
-<li>
-<p>Create the relevant users that will be used by the different teams</p>
-<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>iam<span class="w"> </span>create-user<span class="w"> </span>--user-name<span class="w"> </span>frontend-user
-aws<span class="w"> </span>iam<span class="w"> </span>create-user<span class="w"> </span>--user-name<span class="w"> </span>nodejs-user
-aws<span class="w"> </span>iam<span class="w"> </span>create-user<span class="w"> </span>--user-name<span class="w"> </span>crystal-user
-aws<span class="w"> </span>iam<span class="w"> </span>create-user<span class="w"> </span>--user-name<span class="w"> </span>platform-user
-</code></pre></div>
-</li>
-<li>
-<p>Install project dependencies by running <code>npm install</code> in the main folder of this cloned repository</p>
-</li>
-<li>
-<p>In case you haven't done this before, bootstrap your AWS Account for AWS CDK use using:</p>
-<div class="highlight"><pre><span></span><code>cdk<span class="w"> </span>bootstrap
-</code></pre></div>
-</li>
-<li>
-<p>Modify the code in your forked repo to point to your GitHub username/organisation. This is needed because the AWS CodePipeline that will be automatically created will be triggered upon commits that are made in your forked repo. Open the <a href="../../lib/pipeline-multi-env-gitops/index.ts">pattenrn file source code</a> and look for the declared const of <code>gitOwner</code>. Change it to your GitHub username.</p>
-</li>
-<li>
-<p><em>OPTIONAL</em> - As mentioned above, this pattern uses another repository for GitOps. This is the ArgoCD App of Apps configuration that resides in the <a href="https://github.com/aws-samples/eks-blueprints-workloads/tree/main/multi-repo">aws-samples</a> organisation. If you would like to modify the App of Apps configuration and customise it to your needs, then use the following instructions:</p>
-<ol>
-<li>
-<p>Fork the <a href="https://github.com/aws-samples/eks-blueprints-workloads/tree/main/multi-repo">App of Apps</a> workloads repo to your GitHub username</p>
-</li>
-<li>
-<p>Modify the <a href="../../lib/pipeline-multi-env-gitops/index.ts">pattern code</a> with the following changes:</p>
-</li>
-<li>
-<p>Change the consts of <code>devArgoAddonConfig</code>, <code>testArgoAddonConfig</code>, and <code>prodArgoAddonConfig</code> to point to your GitHub username</p>
-</li>
-<li>
-<p>In the <code>createArgoAddonConfig</code> function, look for the <code>git@github.com:aws-samples/eks-blueprints-workloads.git</code> code under the <code>sourceRepos</code> configurations, and add another reference to your forked workload repository</p>
-</li>
+<li><a href="https://docs.aws.amazon.com/cli/latest/userguide/install-cliv2.html">aws cli</a></li>
+<li><a href="https://Kubernetes.io/docs/tasks/tools/">kubectl</a></li>
+<li><a href="https://docs.aws.amazon.com/cdk/v2/guide/getting_started.html#getting_started_install">cdk</a></li>
+<li><a href="https://docs.npmjs.com/cli/v8/commands/npm-install">npm</a></li>
+<li><code>make</code></li>
 </ol>
-</li>
-</ol>
-<h2 id="deploying">Deploying<a class="headerlink" href="#deploying" title="Permanent link">¤</a></h2>
-<p>Once all pre-requisites are set you are ready to deploy the pipeline. Run the following command from the root of this repository to deploy the pipeline stack:</p>
-<div class="highlight"><pre><span></span><code>make<span class="w"> </span>pattern<span class="w"> </span>pipeline-multienv-gitops<span class="w"> </span>deploy<span class="w"> </span>eks-blueprint-pipeline-stack
+<h2 id="deploy-eks-cluster-with-amazon-eks-blueprints-for-cdk">Deploy EKS Cluster with Amazon EKS Blueprints for CDK<a class="headerlink" href="#deploy-eks-cluster-with-amazon-eks-blueprints-for-cdk" title="Permanent link">¤</a></h2>
+<p>Clone the repository</p>
+<div class="highlight"><pre><span></span><code>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/aws-samples/cdk-eks-blueprints-patterns.git
+<span class="nb">cd</span><span class="w"> </span>cdk-eks-blueprints-patterns
 </code></pre></div>
-<p>Now you can go to <a href="https://eu-west-1.console.aws.amazon.com/codesuite/codepipeline/pipelines">AWS CodePipeline console</a>, and see how it was automatically created to deploy multiple Amazon EKS clusters to different environments.</p>
-<h3 id="notes">Notes<a class="headerlink" href="#notes" title="Permanent link">¤</a></h3>
-<ol>
-<li>
-<p>In case your pipeline fails on the first run, it's because that the AWS CodeBuild step needs elevated permissions at build time. This is described in the official <a href="https://aws-quickstart.github.io/cdk-eks-blueprints/pipelines/#troubleshooting">docs</a>. To resolve this, locate <code>AccessDeniedException</code> in the CodeBuild build logs, and attach the following inline policy to it:</p>
-<div class="highlight"><pre><span></span><code><span class="p">{</span>
-<span class="w">    </span><span class="nt">&quot;Version&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2012-10-17&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nt">&quot;Statement&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">        </span><span class="p">{</span>
-<span class="w">            </span><span class="nt">&quot;Sid&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;VisualEditor0&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;Effect&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Allow&quot;</span><span class="p">,</span>
-<span class="w">            </span><span class="nt">&quot;Action&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
-<span class="w">                </span><span class="s2">&quot;sts:AssumeRole&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;secretsmanager:GetSecretValue&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;secretsmanager:DescribeSecret&quot;</span><span class="p">,</span>
-<span class="w">                </span><span class="s2">&quot;cloudformation:*&quot;</span>
-<span class="w">            </span><span class="p">],</span>
-<span class="w">            </span><span class="nt">&quot;Resource&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;*&quot;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">]</span>
-<span class="p">}</span>
+<p>Updating npm</p>
+<div class="highlight"><pre><span></span><code>npm<span class="w"> </span>install<span class="w"> </span>-g<span class="w"> </span>npm@latest
 </code></pre></div>
-</li>
-</ol>
-<p>The above inconvenience has been fixed in the Blueprints framework as well as in the pattern, so please report such cases if you encounter them. This item is left here for reference in case customers modify the pattern to require additional permissions at build time. </p>
-<ol>
-<li>This pattern consumes multiple Elastic IP addresses, because 3 VPCs with 3 subnets are created by this pattern. Make sure your account limit for EIP are increased to support additional 9 EIPs (1 per Subnets)</li>
-</ol>
+<p>To view patterns and deploy kubeflow pattern</p>
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>list
+npx<span class="w"> </span>cdk<span class="w"> </span>bootstrap
+make<span class="w"> </span>pattern<span class="w"> </span>graviton<span class="w"> </span>deploy
+</code></pre></div>
+<h2 id="verify-the-resources">Verify the resources<a class="headerlink" href="#verify-the-resources" title="Permanent link">¤</a></h2>
+<p>Run the update-kubeconfig command. You should be able to get the command from the CDK output message. More information can be found at <a href="https://aws-quickstart.github.io/cdk-eks-blueprints/getting-started/#cluster-access">https://aws-quickstart.github.io/cdk-eks-blueprints/getting-started/#cluster-access</a></p>
+<div class="highlight"><pre><span></span><code>aws<span class="w"> </span>eks<span class="w"> </span>update-kubeconfig<span class="w"> </span>--name<span class="w"> </span>graviton-blueprint<span class="w"> </span>--region<span class="w"> </span>&lt;your<span class="w"> </span>region&gt;<span class="w"> </span>--role-arn<span class="w"> </span>arn:aws:iam::xxxxxxxxx:role/graviton-construct-bluepr-gravitonconstructbluepri-1OZNO42GH3OCB
+</code></pre></div>
+<p>Let's verify the resources created from the steps above.</p>
+<div class="highlight"><pre><span></span><code>kubectl<span class="w"> </span>get<span class="w"> </span>nodes<span class="w"> </span>-o<span class="w"> </span>json<span class="w"> </span><span class="p">|</span><span class="w"> </span>jq<span class="w"> </span>-r<span class="w"> </span><span class="s1">&#39;.items[] | &quot;Name: &quot;,.metadata.name,&quot;\nInstance Type: &quot;,.metadata.labels.&quot;beta.kubernetes.io/instance-type&quot;,&quot;\nArch: &quot;,.metadata.labels.&quot;beta.kubernetes.io/arch&quot;,&quot;\n&quot;&#39;</span><span class="w"> </span><span class="c1"># Output shows node on M famGraviton3 processor and ARM architecture</span>
+</code></pre></div>
+<h2 id="cleanup">Cleanup<a class="headerlink" href="#cleanup" title="Permanent link">¤</a></h2>
+<p>To clean up your EKS Blueprint, run the following command:</p>
+<div class="highlight"><pre><span></span><code>make<span class="w"> </span>pattern<span class="w"> </span>graviton<span class="w"> </span>destroy
+</code></pre></div>
 
 
 

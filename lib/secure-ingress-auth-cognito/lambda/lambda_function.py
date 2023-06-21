@@ -11,11 +11,7 @@ def lambda_handler(event, context):
         paramName = '/secure-ingress-auth-cognito/ALLOWED_DOMAINS'
         resp = ssmclient.get_parameter(Name=paramName)
         allowed_domains_list = resp['Parameter']['Value']
-        
-        paramName = '/secure-ingress-auth-cognito/AUTO_APPROVED_DOMAINS'
-        resp = ssmclient.get_parameter(Name=paramName)
-        auto_approved_domains_list = resp['Parameter']['Value']
-        
+    
         paramName = '/secure-ingress-auth-cognito/EMAIL_ALLOW_LIST'
         resp = ssmclient.get_parameter(Name=paramName)
         email_allow_list = resp['Parameter']['Value']                
